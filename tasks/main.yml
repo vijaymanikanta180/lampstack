@@ -1,0 +1,9 @@
+---
+# tasks file for lampstack
+- name: Install httpd Package
+  yum: name={{package_name}} state=latest
+  notify:
+  - restart apache
+- name: Start and Enable httpd service
+  service: name=httpd state=restarted enabled=yes
+
